@@ -1,0 +1,17 @@
+db:
+  image: mysql
+  volumes:
+    - ./mysql/runtime:/var/lib/mysql
+  env_file:
+    - ./.env
+web:
+  image: indiehosters/wordpress
+  links:
+    - db
+  volumes:
+    - ./wordpress/data:/app/wp-content
+    - ./wordpress/.htaccess:/app/.htaccess
+    - ./mysql/dump.sql:/initial_db.sql
+  env_file:
+    - ./.env
+
