@@ -2,16 +2,24 @@ db:
   image: mysql
   volumes:
     - ./mysql/runtime:/var/lib/mysql
+    - ./mysql/dump:/dump
+  env_file:
+    - ./.env
+app:
+  image: indiehosters/wordpress
+  links:
+    - db:mysql
+  volumes:
+    - ./wordpress/data:/var/www/html/wp-content
   env_file:
     - ./.env
 web:
-  image: indiehosters/wordpress
-  links:
-    - db
+  image: nginx
   volumes:
-    - ./wordpress/data:/app/wp-content
-    - ./wordpress/.htaccess:/app/.htaccess
-    - ./mysql/dump.sql:/initial_db.sql
-  env_file:
-    - ./.env
-
+    - ./nginx.conf:/etc/nginx/nginx.conf:ro
+  links:
+    - app
+  volumes_from:
+    - app
+  ports:
+    - 80
