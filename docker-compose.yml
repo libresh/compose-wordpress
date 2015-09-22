@@ -2,7 +2,6 @@ db:
   image: mysql
   volumes:
     - ./mysql/runtime:/var/lib/mysql
-    - ./mysql/dump:/dump
   env_file:
     - ./.env
 app:
