@@ -21,4 +21,4 @@ web:
   volumes_from:
     - app
   ports:
-    - 80
+    - "80:80"
