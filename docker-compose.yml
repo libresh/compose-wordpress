@@ -9,7 +9,7 @@ app:
   links:
     - db:mysql
   volumes:
-    - ./wordpress/data:/var/www/html/wp-content
+    - ./data:/var/www/html/wp-content
   env_file:
     - ./.env
 web:
