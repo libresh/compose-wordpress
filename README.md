@@ -11,7 +11,7 @@ Make sure you have [docker-compose](http://docs.docker.com/compose/install/) ins
 git clone https://github.com/indiehosters/wordpress.git
 cd wordpress
 # edit variables:
-vi .env
+vi env
 docker-compose up
 ```
 
