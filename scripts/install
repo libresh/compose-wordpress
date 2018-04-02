@@ -9,3 +9,4 @@ echo "MAIL_USER=${MAIL_USER}" >> env
 echo "MAIL_HOST=${MAIL_HOST}" >> env
 echo "MAIL_PORT=${MAIL_PORT}" >> env
 echo "MAIL_SECURITY=tls" >> env
+echo "SUBNET=${SUBNET}" >> env
