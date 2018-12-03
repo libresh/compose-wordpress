@@ -10,7 +10,7 @@ networks:
       - subnet: 10.0.${SUBNET}.0/24
 services:
   db:
-    image: mysql
+    image: mysql:${MYSQL_VERSION:-5.7}
     volumes:
     - ./mysql/runtime:/var/lib/mysql
     environment:
@@ -18,7 +18,7 @@ services:
     networks:
     - back
   app:
-    image: indiehosters/wordpress
+    image: indiehosters/wordpress:${WORDPRESS_VERSION:-latest}
     links:
     - db:mysql
     volumes:

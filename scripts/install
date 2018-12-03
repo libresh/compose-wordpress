@@ -10,3 +10,5 @@ echo "MAIL_HOST=${MAIL_HOST}" >> .env
 echo "MAIL_PORT=${MAIL_PORT}" >> .env
 echo "MAIL_SECURITY=tls" >> .env
 echo "SUBNET=${SUBNET}" >> .env
+echo "WORDPRESS_VERSION=4.9.8-fpm" >> .env
+echo "MYSQL_VERSION=5.7" >> .env
