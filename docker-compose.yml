@@ -12,7 +12,7 @@ services:
   db:
     image: mysql:${MYSQL_VERSION:-5.7}
     volumes:
-    - ./mysql/runtime:/var/lib/mysql
+    - ./data/mysql/runtime:/var/lib/mysql
     environment:
     - MYSQL_ROOT_PASSWORD
     networks:
@@ -22,7 +22,7 @@ services:
     links:
     - db:mysql
     volumes:
-    - ./data:/var/www/html/wp-content
+    - ./data/wp-content:/var/www/html/wp-content
     environment:
     - WORDPRESS_DB_PASSWORD
     - MAIL_PASS

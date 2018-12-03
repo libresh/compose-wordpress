@@ -2,6 +2,8 @@
 
 MYSQL_ROOT_PASSWORD=`tr -dc A-Za-z0-9_ < /dev/urandom | head -c 20 | xargs`
 
+mkdir data
+
 echo "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}" > .env
 echo "WORDPRESS_DB_PASSWORD=${MYSQL_ROOT_PASSWORD}" >> .env
 echo "MAIL_PASS=${MAIL_PASS}" >> .env
