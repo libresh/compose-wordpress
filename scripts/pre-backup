@@ -1,3 +1,0 @@
-#!/bin/bash -eux
-
-docker-compose exec db bash -c 'mysqldump --all-databases --events -uroot -p$MYSQL_ROOT_PASSWORD' > ./data/mysql/dump.sql
